@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "a4007aaf-58f4-4c59-b16e-2abe982823ff",
+		"name": "Devsu Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12569562"
+	},
+	"item": [
+		{
+			"name": "Get Client By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/clientes/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Pedro Moran\",\r\n    \"identidad\": \"1234-1234-12345\",\r\n    \"genero\": \"masculino\",\r\n    \"edad\": 20,\r\n    \"direccion\": \"Fake Address\",\r\n    \"telefono\": \"+1234567890\",\r\n    \"estado\": true,\r\n    \"password\": \"A@1asqwe123sd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cuenta\": \"2234567890\",\r\n    \"clienteId\": 1,\r\n    \"tipo\": \"ahorro\",\r\n    \"saldoInicial\": 1000,\r\n    \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_cuentas}}/api/cuentas",
+					"host": [
+						"{{base_url_cuentas}}"
+					],
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_cuentas}}/api/cuentas/:id",
+					"host": [
+						"{{base_url_cuentas}}"
+					],
+					"path": [
+						"api",
+						"cuentas",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "0234567890"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_cuentas}}/api/reportes?start=2024-07-01&end=2024-07-24&cliente=1",
+					"host": [
+						"{{base_url_cuentas}}"
+					],
+					"path": [
+						"api",
+						"reportes"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2024-07-01"
+						},
+						{
+							"key": "end",
+							"value": "2024-07-24"
+						},
+						{
+							"key": "cliente",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Pedro Moran Lagos\",\r\n    \"identidad\": \"1234-1234-12346\",\r\n    \"genero\": \"masculino\",\r\n    \"edad\": 30,\r\n    \"direccion\": \"Fake Address\",\r\n    \"telefono\": \"+1234567890\",\r\n    \"estado\": true,\r\n    \"password\": \"A@1asqwe123sd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "46"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Clients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Pedro Moran\",\r\n    \"content\": \"This is a new comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes?page=0&size=5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
